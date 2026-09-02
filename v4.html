@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Villa - View Details</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f6f3ee;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .villa-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5px;
+      height: 450px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      opacity: 0.9;
+    }
+
+    .main-image {
+      position: relative;
+    }
+
+    .main-image .badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #c59d5f;
+      color: white;
+      padding: 9px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .side-images {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    /* Content */
+    .content {
+      padding: 35px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header h1 {
+      font-size: 34px;
+      color: #252525;
+    }
+
+    .location {
+      color: #777;
+      margin-top: 8px;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    .price strong {
+      font-size: 28px;
+      color: #b58945;
+    }
+
+    .price span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .description {
+      margin: 30px 0;
+      line-height: 1.7;
+      color: #666;
+    }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .feature {
+      background: #f8f5ef;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .feature .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* Amenities */
+    .amenities {
+      margin-top: 35px;
+    }
+
+    .amenities h2 {
+      margin-bottom: 20px;
+      color: #252525;
+    }
+
+    .amenity-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .amenity {
+      padding: 12px;
+      color: #555;
+      border-bottom: 1px solid #eee;
+    }
+
+    .amenity::before {
+      content: "✓";
+      color: #b58945;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    button {
+      padding: 15px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .book-btn {
+      background: #b58945;
+      color: white;
+      flex: 1;
+    }
+
+    .book-btn:hover {
+      background: #916d35;
+    }
+
+    .contact-btn {
+      background: #252525;
+      color: white;
+      flex: 1;
+    }
+
+    .contact-btn:hover {
+      background: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        height: 350px;
+      }
+
+      .side-images {
+        display: none;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .price {
+        text-align: left;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .amenity-list {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="villa-card">
+
+      <!-- Image Gallery -->
+      <div class="gallery">
+
+        <div class="main-image">
+          <span class="badge">PREMIUM VILLA</span>
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+            alt="Premium Villa">
+        </div>
+
+        <div class="side-images">
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80"
+            alt="Villa Interior">
+
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+            alt="Villa Exterior">
+        </div>
+
+      </div>
+
+      <!-- Villa Details -->
+      <div class="content">
+
+        <div class="header">
+          <div>
+            <h1>Royal Palm Premium Villa</h1>
+            <p class="location">📍 Goa, India</p>
+          </div>
+
+          <div class="price">
+            <strong>₹25,000</strong>
+            <span>/ night</span>
+          </div>
+        </div>
+
+        <p class="description">
+          Experience luxury and tranquility in our beautifully designed
+          Premium Villa. Featuring spacious bedrooms, a private swimming
+          pool, modern interiors, and breathtaking views, this villa is
+          perfect for families, couples, and luxury travelers.
+        </p>
+
+        <!-- Main Features -->
+        <div class="features">
+
+          <div class="feature">
+            <div class="icon">🛏️</div>
+            <h3>4 Bedrooms</h3>
+            <p>Luxury bedrooms</p>
+          </div>
+
+          <div class="feature">
+            <div class="icon">🚿</div>
+            <h3>4 Bathrooms</h3>
+            <p>Modern bathrooms</p>
+          </div>
+
+          <div class="feature">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h3>8 Guests</h3>
+            <p>Maximum capacity</p>
+          </div>
+
+          <div class="feature">
+            <div class="icon">🏊</div>
+            <h3>Private Pool</h3>
+            <p>Swimming pool</p>
+          </div>
+
+        </div>
+
+        <!-- Amenities -->
+        <div class="amenities">
+
+          <h2>Villa Amenities</h2>
+
+          <div class="amenity-list">
+            <div class="amenity">Private Swimming Pool</div>
+            <div class="amenity">Free Wi-Fi</div>
+            <div class="amenity">Air Conditioning</div>
+            <div class="amenity">Fully Equipped Kitchen</div>
+            <div class="amenity">Smart TV</div>
+            <div class="amenity">Free Parking</div>
+            <div class="amenity">Garden & Terrace</div>
+            <div class="amenity">24/7 Security</div>
+            <div class="amenity">Housekeeping</div>
+          </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+          <button class="book-btn" onclick="bookVilla()">
+            Book This Villa
+          </button>
+
+          <button class="contact-btn" onclick="contactOwner()">
+            Contact Owner
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function bookVilla() {
+      alert("Thank you! Booking process started.");
+    }
+
+    function contactOwner() {
+      alert("Owner contact details will be displayed here.");
+    }
+  </script>
+
+</body>
+</html>
+

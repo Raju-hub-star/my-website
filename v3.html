@@ -1,0 +1,356 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Apartment Details</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .property {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      height: 500px;
+      gap: 5px;
+      background: #ddd;
+    }
+
+    .main-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .side-images {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .side-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #c9a45c;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 35px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #1c1c1c;
+    }
+
+    .location {
+      color: #777;
+      font-size: 16px;
+    }
+
+    .price {
+      font-size: 30px;
+      color: #b08a43;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 35px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .detail {
+      text-align: center;
+      padding: 25px 10px;
+      border-right: 1px solid #eee;
+    }
+
+    .detail:last-child {
+      border-right: none;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .detail span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .description {
+      max-width: 800px;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .feature {
+      background: #fafafa;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact {
+      background: #b08a43;
+      color: white;
+    }
+
+    .contact:hover {
+      background: #8e6d34;
+    }
+
+    .favorite {
+      background: #eee;
+      color: #333;
+    }
+
+    .favorite:hover {
+      background: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .main-image {
+        height: 350px;
+      }
+
+      .side-images {
+        height: 200px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+      }
+
+      .top {
+        flex-direction: column;
+      }
+
+      .details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .detail:nth-child(2) {
+        border-right: none;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="property">
+
+      <!-- Apartment Images -->
+      <div class="gallery">
+
+        <div class="main-image">
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
+            alt="Luxury Apartment Living Room">
+          <div class="badge">LUXURY PROPERTY</div>
+        </div>
+
+        <div class="side-images">
+          <img
+            src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=700&q=80"
+            alt="Luxury Apartment Interior">
+
+          <img
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80"
+            alt="Luxury Apartment Bedroom">
+        </div>
+
+      </div>
+
+      <!-- Apartment Information -->
+      <div class="content">
+
+        <div class="top">
+          <div>
+            <h1>Royal Heights Apartment</h1>
+            <p class="location">📍 Downtown, Mumbai, India</p>
+          </div>
+
+          <div class="price">
+            ₹2.85 Cr
+          </div>
+        </div>
+
+        <!-- Property Details -->
+        <div class="details">
+
+          <div class="detail">
+            <strong>3</strong>
+            <span>Bedrooms</span>
+          </div>
+
+          <div class="detail">
+            <strong>3</strong>
+            <span>Bathrooms</span>
+          </div>
+
+          <div class="detail">
+            <strong>2,450</strong>
+            <span>Sq. Ft.</span>
+          </div>
+
+          <div class="detail">
+            <strong>18th</strong>
+            <span>Floor</span>
+          </div>
+
+        </div>
+
+        <!-- Description -->
+        <h2>About This Apartment</h2>
+
+        <p class="description">
+          Experience sophisticated urban living in this beautifully designed
+          luxury apartment. Featuring panoramic city views, premium finishes,
+          spacious interiors and world-class amenities, this residence is
+          designed for comfort and elegance.
+        </p>
+
+        <!-- Features -->
+        <h2>Amenities & Features</h2>
+
+        <div class="features">
+
+          <div class="feature">✓ Private Balcony</div>
+          <div class="feature">✓ Swimming Pool</div>
+          <div class="feature">✓ Fitness Center</div>
+          <div class="feature">✓ 24/7 Security</div>
+          <div class="feature">✓ Covered Parking</div>
+          <div class="feature">✓ Smart Home System</div>
+          <div class="feature">✓ Club House</div>
+          <div class="feature">✓ High-Speed Elevator</div>
+          <div class="feature">✓ City View</div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="actions">
+
+          <button class="contact" onclick="contactAgent()">
+            Contact Agent
+          </button>
+
+          <button class="favorite" onclick="favoriteProperty(this)">
+            ♡ Add to Favorite
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function contactAgent() {
+      alert("Thank you! An agent will contact you shortly.");
+    }
+
+    function favoriteProperty(button) {
+      if (button.innerHTML.includes("♡")) {
+        button.innerHTML = "♥ Added to Favorite";
+        button.style.color = "#b08a43";
+      } else {
+        button.innerHTML = "♡ Add to Favorite";
+        button.style.color = "#333";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+Save it as index.html and open it in your browser. You can replace the apartment images, price, location, bedrooms, and amenities with your own property data.
