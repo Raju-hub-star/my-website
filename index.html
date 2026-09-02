@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DreamHome Realty</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #17365d;
+            color: white;
+            padding: 20px 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            text-align: center;
+            padding: 25px;
+            background: white;
+        }
+
+        .welcome .red {
+            color: red;
+        }
+
+        .welcome .blue {
+            color: blue;
+        }
+
+        .welcome .green {
+            color: green;
+        }
+        
+        .welcome .violet{
+            color:violet ;
+        }
+
+        /* Image Slider */
+        .slider {
+            width: 100%;
+            max-width: 1000px;
+            height: 350px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 9s infinite;
+        }
+
+        .slide {
+            width: 33.333%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            30% {
+                transform: translateX(0);
+            }
+
+            35% {
+                transform: translateX(-33.333%);
+            }
+
+            65% {
+                transform: translateX(-33.333%);
+            }
+
+            70% {
+                transform: translateX(-66.666%);
+            }
+
+            95% {
+                transform: translateX(-66.666%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Hero */
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)
+                ),
+                url("https://images.unsplash.com/photo-1560518883-ce09059eeffa")
+                center/cover;
+
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #17365d;
+        }
+
+        /* Properties */
+        .properties {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+        .property {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .property img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property-content {
+            padding: 20px;
+        }
+
+        .property h3 {
+            color: #17365d;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #0a8f45;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+
+            background: #17365d;
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #0d2745;
+        }
+
+        /* About and Contact */
+        .contact {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background: #17365d;
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background: #0d2745;
+        }
+
+        /* Moving Images */
+        .gallery {
+            display: flex;
+            gap: 20px;
+
+            overflow: hidden;
+
+            padding: 30px 0;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #17365d;
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 40px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .slider {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>DreamHome Realty</h1>
+
+        <nav>
+            <a href="file:///C:/Users/USER/Desktop/raj/suraj.html">Home</a>
+            <a href="#properties">Properties</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Welcome -->
+    <section class="welcome">
+
+        <h1>
+            <span class="red">WELCOME</span>
+            <span class="blue"> TO </span>
+            <span class="green"> OUR </span>
+            <span class="violet"> DEALERSHIP</span>
+        </h1>
+
+    </section>
+
+
+    <!-- Image Slider -->
+    <div class="slider">
+
+        <div class="slides">
+
+            <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                class="slide"
+                alt="Modern House">
+
+            <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+                class="slide"
+                alt="Luxury Apartment">
+
+            <img
+                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+                class="slide"
+                alt="Premium Villa">
+
+        </div>
+
+    </div>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div>
+
+            <h2>Find Your Dream Property</h2>
+
+            <p>
+                Buy, sell and rent properties with confidence.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Content -->
+    <div class="container">
+
+
+        <!-- Properties -->
+        <section id="properties">
+
+            <h2 class="section-title">
+                Featured Properties
+            </h2>
+
+
+            <div class="properties">
+
+
+                <!-- Property 1 -->
+                <div class="property">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                        alt="Modern Family House">
+
+                    <div class="property-content">
+
+                        <h3>
+                            Modern Family House
+                        </h3>
+
+                         <p>
+                            3 Bedrooms • 2 Bathrooms • 1 Garage
+                        </p>
+
+                        <p class="price">
+                            ₹75,00,000
+                        </p>
+
+                        <a
+                            href="file:///C:/Users/USER/Desktop/mini/view.html"
+                            class="btn">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Property 2 -->
+                <div class="property">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+                        alt="Luxury Apartment">
+
+                    <div class="property-content">
+
+                        <h3>
+                            Luxury Apartment
+                        </h3>
+
+                        <p>
+                            2 Bedrooms • 2 Bathrooms • City View
+                        </p>
+
+                        <p class="price">
+                            ₹45,00,000
+                        </p>
+
+                        <a
+                            href="file:///C:/Users/USER/Desktop/rk/v3.html"
+                            class="btn">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Property 3 -->
+                <div class="property">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+                        alt="Premium Villa">
+
+                    <div class="property-content">
+
+                        <h3>
+                            Premium Villa
+                        </h3>
+
+                        <p>
+                            4 Bedrooms • 3 Bathrooms • Swimming Pool
+                        </p>
+
+                        <p class="price">
+                            ₹1,20,00,000
+                        </p>
+
+                        <a
+                            href="file:///C:/Users/USER/Desktop/rk/v4.html"
+                            class="btn">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Gallery -->
+        <section>
+
+            <h2 class="section-title">
+                Our Properties
+            </h2>
+
+            <div class="gallery">
+
+                <img
+                    src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
+                    alt="Property">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+                    alt="Property">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+                    alt="Property">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"
+                    alt="Property">
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section
+            id="about"
+            class="contact">
+
+            <h2 class="section-title">
+                About Our Real Estate Program
+            </h2>
+
+            <p>
+                Our real estate program helps customers find
+                suitable properties for buying, selling and renting.
+                Users can explore properties, compare prices,
+                view property details and contact real estate
+                agents directly.
+            </p>
+
+        </section><br><br>
+
+       <center> <a href="file:///C:/Users/USER/Desktop/rk/qq.html">
+          <button style="background-color:blue;color:white;font-size:25px;padding:10px 20px;border:none;border-radius:15px;">ABOUT US</button>
+        </a></center>
+        
+          <!-- Contact -->
+        <section
+            id="contact"
+            class="contact">
+
+            <h2 class="section-title">
+                Contact Us
+            </h2>
+
+
+            <form onsubmit="submitForm(event)">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required>
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required>
+
+                <textarea
+                    rows="5"
+                    placeholder="Enter your message">
+                </textarea>
+
+                <button type="submit">
+                    Send Inquiry
+                </button>
+
+            </form>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 DreamHome Realty.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your inquiry has been submitted."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
